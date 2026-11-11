@@ -10,15 +10,18 @@ variable-length expansion are computed once. A cost model partitions the round
 into shared plans and candidates that run alone.
 
 This repository is the code supplement of the ICDE 2027 submission
-*ECHO: Shared Execution of Graph Queries for LLM Agents*. Proofs, thresholds,
-the full protocol and the additional results are in the paper's appendix file.
+*ECHO: Shared Execution of Graph Queries for LLM Agents*; the paper's main LDBC
+comparison is reproduced as described in
+[Reproducing the main LDBC comparison](#reproducing-the-main-ldbc-comparison).
+Proofs, thresholds, the full protocol and the additional results are in the
+supplementary material (submitted as a separate PDF).
 
 ---
 
 ## Snapshot
 
-The tree is the frozen build used for the paper's main LDBC comparison
-(Table II, `main41a`), exported without development history:
+The tree is the frozen build used for the paper's main LDBC comparison table
+(run `main41a`), exported without development history:
 
 | | |
 |---|---|
@@ -55,7 +58,7 @@ vendor/SubgraphMatching/ Sun & Luo (SIGMOD 2020) framework @ bcaa935, MIT (LICEN
 vendor/nlohmann/         nlohmann/json (MIT)
 patch/                   ECHO hook into the vendored base (scripts/apply_patch.sh)
 scripts/                 matrix runners for the subgraph-matching and GuP comparisons
-experiments/ldbc-rounds/ main-table driver (run_main40h.py), cell merge and Table II summarizer,
+experiments/ldbc-rounds/ main-table driver (run_main40h.py), cell merge and main-LDBC-table summarizer,
                          frozen summary outputs in frozen-results/
 workloads/ldbc-rounds/   candidate rounds (JSON): 720 SF1 rounds, of which the 685 listed in
                          populations/sf1-shards/ are run (635 with >= 2 distinct CQ+ candidates
@@ -139,7 +142,7 @@ with population sizes, row counts and the 40 unrecorded cells).
   sidecars only, but the retention logic still expects that directory layout.
 - Building the sidecar needs the `<graph>.ids.json` vertex index produced by
   the earlier export step, which is not part of this snapshot.
-- The experiments other than Table II (scalability, MASC/GuP home graphs,
+- The experiments other than the main LDBC comparison (scalability, MASC/GuP home graphs,
   ablation, Text2GraphQuery-Bench) were produced by other builds of the same
   code base; their drivers are in `scripts/` and `v3/scripts/`, their commits
   are not part of this snapshot.
