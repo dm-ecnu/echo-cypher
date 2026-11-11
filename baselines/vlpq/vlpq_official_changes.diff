@@ -1,0 +1,12 @@
+diff --git a/build.gradle b/build.gradle
+index af06884..32427cd 100644
+--- a/build.gradle
++++ b/build.gradle
+@@ -49,7 +49,6 @@ compileJava {
+     // Enable additional compile time warnings.
+     options.compilerArgs << "-Xlint:all" << "-Xlint:-processing" << "-Xlint:-cast" << "-Xlint:-serial"
+     // Enable incremental builds. Disable if giving errors.
+-    options.incremental = true
+ }
+ 
+ apply plugin: 'application'

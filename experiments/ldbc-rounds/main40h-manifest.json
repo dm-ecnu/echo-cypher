@@ -1,0 +1,51 @@
+{
+ "bin": "bin/v3_batch-0915fb6",
+ "population": {
+  "sf1": 685,
+  "sf10": 200
+ },
+ "todo_round_reps": {
+  "sf10": 289
+ },
+ "jobs": 289,
+ "affected_sf10_rounds": [
+  "round-0075.json",
+  "round-0076.json",
+  "round-0077.json",
+  "round-0078.json",
+  "round-0252.json",
+  "round-0253.json",
+  "round-0254.json",
+  "round-0303.json",
+  "round-0307.json",
+  "round-0310.json",
+  "round-0313.json",
+  "round-0316.json",
+  "round-0321.json",
+  "round-0322.json",
+  "round-0330.json",
+  "round-0333.json",
+  "round-0336.json",
+  "round-0337.json",
+  "round-0340.json",
+  "round-0344.json",
+  "round-0854.json"
+ ],
+ "affected_sf10_n": 21,
+ "conc": {
+  "sf1": 24,
+  "sf10": 12
+ },
+ "cores": "130,131,132,133,134,135,136,137,201,202,203,214,215,217,218,219,220",
+ "mem_gib": {
+  "sf1": 24,
+  "sf10": 32
+ },
+ "cell_cap": 3600,
+ "warm_cap": 60,
+ "pss_fraction": 0.3,
+ "only": "sf10",
+ "old_cells": 3991,
+ "new_cells": 382,
+ "active_old_reps": 8
+}

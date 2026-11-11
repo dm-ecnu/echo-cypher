@@ -1,0 +1,4 @@
+Vendored from https://github.com/RapidsAtHKUST/SubgraphMatching (Sun & Luo, SIGMOD 2020).
+Base commit: bcaa935c83709b0220e950634dbf5215ae2a526e (upstream, unmodified).
+License: MIT (see LICENSE).
+Our changes live outside this directory (see ../ECHO-CHANGES.md and adapters/).

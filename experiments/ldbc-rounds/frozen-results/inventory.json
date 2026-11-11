@@ -1,0 +1,339 @@
+{
+ "candidate_sum_per_round": {
+  "sf1": 3470,
+  "sf10": 1112
+ },
+ "input_digest": "d4dc3934741b9611db434aa44cf000ce82abaf1b84ff484a7ec22e2446c269c4",
+ "input_files": 3790,
+ "input_rows": 21488,
+ "missing": [
+  {
+   "method": "v3",
+   "repeat": 3,
+   "round": "round-0711.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "serial",
+   "repeat": 3,
+   "round": "round-0711.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "masc",
+   "repeat": 3,
+   "round": "round-0711.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "batchenum",
+   "repeat": 3,
+   "round": "round-0711.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "vlpq",
+   "repeat": 3,
+   "round": "round-0711.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "v3",
+   "repeat": 4,
+   "round": "round-0711.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "serial",
+   "repeat": 4,
+   "round": "round-0711.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "masc",
+   "repeat": 4,
+   "round": "round-0711.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "batchenum",
+   "repeat": 4,
+   "round": "round-0711.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "vlpq",
+   "repeat": 4,
+   "round": "round-0711.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "v3",
+   "repeat": 0,
+   "round": "round-0712.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "serial",
+   "repeat": 0,
+   "round": "round-0712.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "masc",
+   "repeat": 0,
+   "round": "round-0712.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "batchenum",
+   "repeat": 0,
+   "round": "round-0712.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "vlpq",
+   "repeat": 0,
+   "round": "round-0712.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "v3",
+   "repeat": 1,
+   "round": "round-0712.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "serial",
+   "repeat": 1,
+   "round": "round-0712.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "masc",
+   "repeat": 1,
+   "round": "round-0712.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "batchenum",
+   "repeat": 1,
+   "round": "round-0712.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "vlpq",
+   "repeat": 1,
+   "round": "round-0712.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "v3",
+   "repeat": 2,
+   "round": "round-0712.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "serial",
+   "repeat": 2,
+   "round": "round-0712.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "masc",
+   "repeat": 2,
+   "round": "round-0712.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "batchenum",
+   "repeat": 2,
+   "round": "round-0712.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "vlpq",
+   "repeat": 2,
+   "round": "round-0712.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "v3",
+   "repeat": 3,
+   "round": "round-0712.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "serial",
+   "repeat": 3,
+   "round": "round-0712.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "masc",
+   "repeat": 3,
+   "round": "round-0712.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "batchenum",
+   "repeat": 3,
+   "round": "round-0712.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "vlpq",
+   "repeat": 3,
+   "round": "round-0712.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "v3",
+   "repeat": 4,
+   "round": "round-0712.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "serial",
+   "repeat": 4,
+   "round": "round-0712.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "masc",
+   "repeat": 4,
+   "round": "round-0712.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "batchenum",
+   "repeat": 4,
+   "round": "round-0712.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "vlpq",
+   "repeat": 4,
+   "round": "round-0712.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "v3",
+   "repeat": 0,
+   "round": "round-0715.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "serial",
+   "repeat": 0,
+   "round": "round-0715.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "masc",
+   "repeat": 0,
+   "round": "round-0715.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "batchenum",
+   "repeat": 0,
+   "round": "round-0715.json",
+   "sf": "sf10",
+   "template": "IC9"
+  },
+  {
+   "method": "vlpq",
+   "repeat": 0,
+   "round": "round-0715.json",
+   "sf": "sf10",
+   "template": "IC9"
+  }
+ ],
+ "n_missing": 40,
+ "populations": {
+  "sf1": 685,
+  "sf10": 200
+ },
+ "root": "$ECHO_ROOT",
+ "round_reps": {
+  "sf1": 3425,
+  "sf10": 1000
+ },
+ "rows": 22125,
+ "rows_by_sf_method_status": {
+  "sf10|batchenum|error": 188,
+  "sf10|batchenum|missing": 8,
+  "sf10|batchenum|ok": 785,
+  "sf10|batchenum|timeout": 19,
+  "sf10|masc|error": 188,
+  "sf10|masc|missing": 8,
+  "sf10|masc|ok": 785,
+  "sf10|masc|timeout": 19,
+  "sf10|serial|error": 188,
+  "sf10|serial|missing": 8,
+  "sf10|serial|ok": 785,
+  "sf10|serial|timeout": 19,
+  "sf10|v3|error": 162,
+  "sf10|v3|missing": 8,
+  "sf10|v3|ok": 795,
+  "sf10|v3|timeout": 35,
+  "sf10|vlpq|error": 188,
+  "sf10|vlpq|missing": 8,
+  "sf10|vlpq|ok": 785,
+  "sf10|vlpq|timeout": 19,
+  "sf1|batchenum|error": 176,
+  "sf1|batchenum|ok": 3215,
+  "sf1|batchenum|timeout": 34,
+  "sf1|masc|error": 176,
+  "sf1|masc|ok": 3215,
+  "sf1|masc|timeout": 34,
+  "sf1|serial|error": 176,
+  "sf1|serial|ok": 3215,
+  "sf1|serial|timeout": 34,
+  "sf1|v3|error": 190,
+  "sf1|v3|ok": 3215,
+  "sf1|v3|timeout": 20,
+  "sf1|vlpq|error": 176,
+  "sf1|vlpq|ok": 3215,
+  "sf1|vlpq|timeout": 34
+ }
+}

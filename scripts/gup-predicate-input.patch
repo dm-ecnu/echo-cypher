@@ -1,0 +1,65 @@
+--- a/src/graph.rs
++++ b/src/graph.rs
+@@ -16,2 +16,4 @@
+ pub struct Graph {
++    #[serde(default)]
++    pub allowed: Vec<Option<Vec<Vertex>>>,
+     neighbors: Vec<Vec<Vertex>>,
+@@ -58,2 +60,3 @@
+         Graph {
++            allowed: vec![],
+             neighbors,
+@@ -65,2 +68,6 @@
+ 
++    pub fn input_permits(&self, u: Vertex, v: Vertex) -> bool {
++        self.allowed.get(u as usize).and_then(|a| a.as_ref())
++            .map_or(true, |a| a.binary_search(&v).is_ok())
++    }
+     pub fn num_vertices(&self) -> usize {
+--- a/src/file.rs
++++ b/src/file.rs
+@@ -14,2 +14,4 @@
+ pub struct QueryElement {
++    #[serde(default)]
++    pub allowed: Vec<Option<Vec<Vertex>>>,
+     pub edges: Vec<(Vertex, Vertex)>,
+@@ -175,2 +177,3 @@
+     lmap: &HashMap<Label, Label>,
++    vmap: &HashMap<Vertex, Vertex>,
+ ) -> Graph {
+@@ -184,3 +187,8 @@
+     });
+-    Graph::from_edges(vertices, &q.edges)
++    let mut graph = Graph::from_edges(vertices, &q.edges);
++    graph.allowed = q.allowed.iter().map(|a| a.as_ref().map(|ids| {
++        let mut out: Vec<Vertex> = ids.iter().filter_map(|v| vmap.get(v).cloned()).collect();
++        out.sort(); out.dedup(); out
++    })).collect();
++    graph
+ }
+@@ -188,3 +196,3 @@
+ /// Returns a vector of queries.
+-pub fn read_queries(qfile: &str, lmap: &HashMap<Label, Label>) -> Vec<Graph> {
++pub fn read_queries(qfile: &str, lmap: &HashMap<Label, Label>, vmap: &HashMap<Vertex, Vertex>) -> Vec<Graph> {
+     serde_yaml::from_reader::<_, QueryFile>(open(qfile))
+@@ -195,3 +203,3 @@
+         .enumerate()
+-        .map(|(i, q)| create_graph(q, i, lmap))
++        .map(|(i, q)| create_graph(q, i, lmap, vmap))
+         .collect()
+--- a/src/main.rs
++++ b/src/main.rs
+@@ -94,4 +94,4 @@
+ 
+-    let (g, _, lmap) = read_renumbered_graph(&args.graph);
+-    let qs = read_queries(&args.query_set, &lmap);
++    let (g, vmap, lmap) = read_renumbered_graph(&args.graph);
++    let qs = read_queries(&args.query_set, &lmap, &vmap);
+ 
+--- a/src/gup14/filtering.rs
++++ b/src/gup14/filtering.rs
+@@ -54,3 +54,3 @@
+         for &v in hints[u as usize] {
+-            if g.out_degree(v) >= q.out_degree(u)
++            if q.input_permits(u, v) && g.out_degree(v) >= q.out_degree(u)
+                 && gix.max_nbr_degs[v as usize] >= mnd

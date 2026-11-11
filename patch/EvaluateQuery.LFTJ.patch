@@ -1,0 +1,46 @@
+--- a/matching/EvaluateQuery.cpp
++++ b/matching/EvaluateQuery.cpp
+@@ -1,3 +1,9 @@
++// ECHO PATCH (only change in vendor/SubgraphMatching): LFTJ exposes the current embedding to
++// the embedding hook and checks a deadline every 4096 walk steps.
++#include "echo_common.h"
++#include <atomic>
++namespace echo { void emit_embedding(VertexID* embedding); }
++static std::atomic<unsigned long long> echo_progress{0};
+ //
+ // Created by ssunah on 11/20/18.
+ //
+@@ -269,5 +275,8 @@ EvaluateQuery::LFTJ(const Graph *data_graph, const Graph *query_graph, Edges ***
+     bool *visited_vertices;
+     allocateBuffer(data_graph, query_graph, candidates_count, idx, idx_count, embedding, idx_embedding,
+                    temp_buffer, valid_candidate_idx, visited_vertices);
++    echo_progress = 0;
++    if (echo::g_lfrt_abort != nullptr) *echo::g_lfrt_abort = false;
++    echo::g_lfrt_embedding = embedding;
+ 
+     size_t embedding_cnt = 0;
+@@ -318,6 +328,11 @@ EvaluateQuery::LFTJ(const Graph *data_graph, const Graph *query_graph, Edges ***
+             VertexID v = candidates[u][valid_idx];
+ 
+             if (visited_vertices[v]) {
++                if ((++echo_progress & 4095ULL) == 0ULL && echo::g_lfrt_abort != nullptr &&
++                    std::chrono::steady_clock::now() > echo::g_lfrt_deadline) {
++                    *echo::g_lfrt_abort = true;
++                    goto EXIT;
++                }
+                 idx[cur_depth] += 1;
+ #ifdef ENABLE_FAILING_SET
+                 vec_failing_set[cur_depth] = ancestors[u];
+@@ -351,6 +368,12 @@ EvaluateQuery::LFTJ(const Graph *data_graph, const Graph *query_graph, Edges ***
+ 
+             if (cur_depth == max_depth - 1) {
+                 embedding_cnt += 1;
++                echo::emit_embedding(embedding);
++                if ((++echo_progress & 4095ULL) == 0ULL && echo::g_lfrt_abort != nullptr &&
++                    std::chrono::steady_clock::now() > echo::g_lfrt_deadline) {
++                    *echo::g_lfrt_abort = true;
++                    goto EXIT;
++                }
+                 visited_vertices[v] = false;
+ 
+ #ifdef DISTRIBUTION
